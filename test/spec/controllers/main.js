@@ -17,11 +17,4 @@ describe('Controller: MainCtrl', function () {
       // place here mocked dependencies
     });
   }));
-  
-  it('should attach a reset origin chart to scope', function () {
-    expect(scope.resetOriginChart).toBeDefined();
-  });
-  it('should attach a reset destination chart to scope', function () {
-    expect(scope.resetDestinationChart).toBeDefined();
-  });
 });

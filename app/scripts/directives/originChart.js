@@ -10,7 +10,7 @@ angular.module('angularCrossfilterApp')
       restrict: 'E',
       template: '<select><option ng-repeat="origin in OriginList" ng-click="selectOrigin(origin)">' +
       '{{origin}}</option></select>' +
-      '<a class="reset" ng-click="resetOriginChart()">reset</a></div>',
+      '<a class="reset" ng-click="resetOriginChart()">reset</a>',
       link: function (scope) {
         var GroupName = 'marker-select';
 
