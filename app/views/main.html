@@ -1,21 +1,47 @@
 <div class="jumbotron">
   <h1>US Flight delay analysis</h1>
-    <div id="charts">
-
-      <div id="critera"><h2>Search criteras</h2>
-        <origin-chart></origin-chart>
-        <destination-chart></destination-chart>
-
-        <div class="title">Time of Day</div>
-        <hour-chart></hour-chart>
-
-        <div class="title">Day of the week</div>
-        <day-chart></day-chart>
+  <p>This application help you to decide on what combination of day and time of day a flight should be booked at in order to avoid delays.</p>
+</div>
+<div id="charts">
+  <div class="row">
+    <div id="critera">
+      <div class="row">
+        <h2>Search criteras</h2>
+        <div class="col-sm-6">
+          <h3>Enter origin</h3>
+          <origin-chart></origin-chart>
+        </div>
+        <div class="col-sm-6">
+          <h3>Enter destination</h3>
+          <destination-chart></destination-chart>
+        </div>
       </div>
-      <div id="analyse-daly">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="title">Time of Day</div>
+          <hour-chart></hour-chart>
+        </div>
+        <div class="col-sm-6">
+          <div class="title">Day of the week</div>
+          <day-chart></day-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div id="analyse-daly">
+      <div class="col-sm-6">
+        <div class="title">Delay</div>
         <delay-chart></delay-chart>
+      </div>
+      <div class="col-sm-6">
+        <div class="title">Delay ratio</div>
         <delay-ratio-chart></delay-ratio-chart>
+      </div>
+      <div class="row">
+        <div class="title">Average delay</div>
         <average-delay-chart></average-delay-chart>
       </div>
     </div>
+  </div>
 </div>

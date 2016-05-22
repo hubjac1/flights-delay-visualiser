@@ -20,8 +20,8 @@ angular.module('angularCrossfilterApp')
 
           scope.delayChart = dc.barChart('#delay-chart', groupName);
           scope.delayChart
-            .width(180)
-            .height(180)
+            .width(400)
+            .height(200)
             .dimension(delay)
             .group(delays)
             .x(d3.scale.linear()

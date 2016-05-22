@@ -20,8 +20,8 @@ angular.module('angularCrossfilterApp')
 
           scope.hourChart = dc.barChart('#hour-chart', groupName);
           scope.hourChart
-            .width(180)
-            .height(180)
+            .width(400)
+            .height(200)
             .dimension(hour)
             .group(hours)
             .x(d3.scale.linear()

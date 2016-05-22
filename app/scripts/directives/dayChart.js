@@ -25,8 +25,8 @@ angular.module('angularCrossfilterApp')
 
           scope.dayChart = dc.rowChart('#day-chart', groupName);
           scope.dayChart
-            .width(180)
-            .height(180)
+            .width(400)
+            .height(200)
             .dimension(dayOfWeek)
             .group(dayOfWeekGroup)
             //.ordinalColors(['#3182bd', '#6baed6', '#9ecae1', '#c6dbef', '#dadaeb'])
