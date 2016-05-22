@@ -26,12 +26,20 @@ module.exports = function(config) {
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/bootstrap/dist/js/bootstrap.js',
+      'bower_components/d3/d3.js',
+      'bower_components/crossfilter/crossfilter.js',
+      'bower_components/moment/moment.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'test/spec/**/*.js',
+      {pattern: 'test/asset/smallFlightDelay.csv', watched: false, included: false, served: true}
     ],
+
+    proxies: {
+      '/data/FlightDelays.csv': 'test/asset/smallFlightDelay.csv'
+    },
 
     // list of files / patterns to exclude
     exclude: [
