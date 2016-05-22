@@ -17,13 +17,7 @@ describe('Controller: MainCtrl', function () {
       // place here mocked dependencies
     });
   }));
-
-  it('should attach a reset hour chart to scope', function () {
-    expect(scope.resetHourChart).toBeDefined();
-  });
-  it('should attach a reset day chart to scope', function () {
-    expect(scope.resetDayChart).toBeDefined();
-  });
+  
   it('should attach a reset origin chart to scope', function () {
     expect(scope.resetOriginChart).toBeDefined();
   });

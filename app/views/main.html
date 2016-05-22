@@ -1,27 +1,16 @@
 <div class="jumbotron">
   <h1>US Flight delay analysis</h1>
     <div id="charts">
+
       <div id="critera"><h2>Search criteras</h2>
-        <div id="hour-chart" class="chart">
-          <div class="title">Time of Day</div>
-          <a class="reset" ng-click="resetHourChart()">reset</a>
-        </div>
-        <div id="day-chart" class="chart">
-          <div class="title">Day of the week</div>
-          <a class="reset" ng-click="resetDayChart()">reset</a>
-        </div>
-        <div id="origin-chart" class="chart">
-          <div class="title">Origin</div>
-          <a class="reset" ng-click="resetOriginChart()">reset</a>
-        </div>
-        <div id="destination-chart" class="chart">
-          <div class="title">Origin</div>
-          <a class="reset" ng-click="resetDestinationChart()">reset</a>
-        </div>
+        <origin-chart></origin-chart>
+        <destination-chart></destination-chart>
+
+        <div class="title">Time of Day</div>
+        <hour-chart></hour-chart>
+
+        <div class="title">Day of the week</div>
+        <day-chart></day-chart>
       </div>
-
-  </div>
-
-
-
+    </div>
 </div>

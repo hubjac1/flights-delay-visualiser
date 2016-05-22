@@ -8,8 +8,8 @@ describe('Flight information service', function () {
 
 
   // Initialize
-  beforeEach(inject(function (_UtilService_) {
-    UtilService = _UtilService_;
+  beforeEach(inject(function (_FlightInformationService_) {
+    UtilService = _FlightInformationService_;
   }));
 
   it('should return date getFlightDate(2016-01-24, 1230)', function () {
