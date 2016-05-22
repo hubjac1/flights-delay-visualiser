@@ -8,33 +8,23 @@
  * Controller of the angularCrossfilterApp
  */
 angular.module('angularCrossfilterApp')
-  .controller('MainCtrl', [ '$scope', 'UtilService',function ($scope, UtilService) {
+  .controller('MainCtrl', [ '$scope', 'UtilService', 'FlightInformationService',function ($scope, UtilService, FlightInformationService) {
 
     var GroupName = 'marker-select';
 
-    d3.csv(UtilService.flightDelay, function(error, flights) {
-      
+    FlightInformationService.getDataSet().then(function(flight) {
 
-      // A little coercion, since the CSV is untyped.
-      flights.forEach(function(d, i) {
-        d.index = i;
-        d.date = UtilService.getFlightDate(d.fl_date, d.crs_dep_time);
-        d.delay = d.arr_delay;
-        //d.distance = d.distance;
-      });
 
-      // Create the crossfilter for the relevant dimensions and groups.
-      var flight = crossfilter(flights),
-        all = flight.groupAll(),
-        date = flight.dimension(function(d) { return d.date; }),
-        dates = date.group(d3.time.day),
 
+      //var flight = FlightInformationService.dataSet,
+
+        var all = flight.groupAll(),
         delay = flight.dimension(function(d) { return Math.max(-60, Math.min(149, d.delay)); }),
         delays = delay.group(function(d) { return Math.floor(d / 10) * 10; }),
         distance = flight.dimension(function(d) { return Math.min(1999, d.distance); }),
-        distances = distance.group(function(d) { return Math.floor(d / 50) * 50; }),
-        origin = flight.dimension(function(d) { return  d.origin; }),
-        origins = origin.group(function(d) { return d.origin; });
+        distances = distance.group(function(d) { return Math.floor(d / 50) * 50; });
+
+
 
       function buildHourChart(flight, groupName){
 
@@ -50,7 +40,7 @@ angular.module('angularCrossfilterApp')
           .x(d3.scale.linear()
             .domain([0, 24])
             .rangeRound([0, 10 * 24]))
-          .brushOn(true)
+          .brushOn(true);
 
       }
 
@@ -101,7 +91,7 @@ angular.module('angularCrossfilterApp')
 
       function buildDestinationChart(flight, groupName){
         var destination = flight.dimension(function(d) { return  d.dest; }),
-          destinationGroup = origin.group();
+          destinationGroup = destination.group();
 
         $scope.destChart = dc.rowChart('#destination-chart', groupName);
         $scope.destChart
