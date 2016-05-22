@@ -16,7 +16,7 @@ describe('Util service', function () {
     expect(UtilService.flightDelay).toBe('data/FlightDelays.csv');
   });
 
-  it('should return date getFlightDate(2016-01-24)', function () {
-    expect(UtilService.getFlightDate('2016-01-24')).toEqual(new Date(2016, 0, 24) );
+  it('should return date getFlightDate(2016-01-24, 1230)', function () {
+    expect(UtilService.getFlightDate('2016-01-24', '1230')).toEqual(new Date(2016, 0, 24, 12, 30) );
   });
 });

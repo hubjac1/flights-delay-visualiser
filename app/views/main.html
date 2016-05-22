@@ -1,25 +1,27 @@
 <div class="jumbotron">
-  <h1>{{message}}</h1>
+  <h1>US Flight delay analysis</h1>
+    <div id="charts">
+      <div id="critera"><h2>Search criteras</h2>
+        <div id="hour-chart" class="chart">
+          <div class="title">Time of Day</div>
+          <a class="reset" ng-click="resetHourChart()">reset</a>
+        </div>
+        <div id="day-chart" class="chart">
+          <div class="title">Day of the week</div>
+          <a class="reset" ng-click="resetDayChart()">reset</a>
+        </div>
+        <div id="origin-chart" class="chart">
+          <div class="title">Origin</div>
+          <a class="reset" ng-click="resetOriginChart()">reset</a>
+        </div>
+        <div id="destination-chart" class="chart">
+          <div class="title">Origin</div>
+          <a class="reset" ng-click="resetDestinationChart()">reset</a>
+        </div>
+      </div>
 
-
-  <div id="charts">
-    <div id="hour-chart" class="chart">
-      <div class="title">Time of Day</div>
-    </div>
-    <div id="delay-chart" class="chart">
-      <div class="title">Arrival Delay (min.)</div>
-    </div>
-    <div id="distance-chart" class="chart">
-      <div class="title">Distance (mi.)</div>
-    </div>
-    <div id="date-chart" class="chart">
-      <div class="title">Date</div>
-    </div>
   </div>
 
-  <aside id="totals"><span id="active">-</span> of <span id="total">-</span> flights selected.</aside>
 
-  <div id="lists">
-    <div id="flight-list" class="list"></div>
-  </div>
+
 </div>

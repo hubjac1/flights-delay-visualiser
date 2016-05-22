@@ -6,8 +6,7 @@ describe('Controller: MainCtrl', function () {
   beforeEach(module('angularCrossfilterApp'));
 
   var MainCtrl,
-    scope,
-    UtilService;
+    scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, _UtilService_) {
@@ -19,7 +18,16 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.message).toBe('data/FlightDelays.csv');
+  it('should attach a reset hour chart to scope', function () {
+    expect(scope.resetHourChart).toBeDefined();
+  });
+  it('should attach a reset day chart to scope', function () {
+    expect(scope.resetDayChart).toBeDefined();
+  });
+  it('should attach a reset origin chart to scope', function () {
+    expect(scope.resetOriginChart).toBeDefined();
+  });
+  it('should attach a reset destination chart to scope', function () {
+    expect(scope.resetDestinationChart).toBeDefined();
   });
 });
