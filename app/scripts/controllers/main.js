@@ -10,7 +10,7 @@
 angular.module('angularCrossfilterApp')
   .controller('MainCtrl', [ '$scope', 'UtilService',function ($scope, UtilService) {
 
-    $scope.message = 'Salut';
+    $scope.message = UtilService.flightDelay;
 
     d3.csv(UtilService.flightDelay, function(error, flights) {
 
@@ -27,7 +27,7 @@ angular.module('angularCrossfilterApp')
       // A little coercion, since the CSV is untyped.
       flights.forEach(function(d, i) {
         d.index = i;
-        d.date = new Date(moment(d.fl_date, "YYYY-MM-DD").toDate());
+        d.date = UtilService.getFlightDate(d.fl_date);
         d.delay = d.arr_delay;
         //d.distance = d.distance;
       });

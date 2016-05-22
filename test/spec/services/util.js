@@ -7,12 +7,16 @@ describe('Util service', function () {
   var UtilService;
 
 
-  // Initialize 
+  // Initialize
   beforeEach(inject(function (_UtilService_) {
     UtilService = _UtilService_;
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
+  it('should serve flightDelay path', function () {
     expect(UtilService.flightDelay).toBe('data/FlightDelays.csv');
+  });
+
+  it('should return date getFlightDate(2016-01-24)', function () {
+    expect(UtilService.getFlightDate('2016-01-24')).toEqual(new Date(2016, 0, 24) );
   });
 });

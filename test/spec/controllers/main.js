@@ -8,21 +8,18 @@ describe('Controller: MainCtrl', function () {
   var MainCtrl,
     scope,
     UtilService;
-  UtilService = {
-    flightDelay : ''
-  }
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, _UtilService_) {
     scope = $rootScope.$new();
     MainCtrl = $controller('MainCtrl', {
       $scope: scope,
-      UtilService: UtilService
+      UtilService: _UtilService_
       // place here mocked dependencies
     });
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.message).toBe('Salut');
+    expect(scope.message).toBe('data/FlightDelays.csv');
   });
 });
