@@ -23,7 +23,7 @@ angular.module('angularCrossfilterApp')
             d.index = i;
             d.date = getFlightDate(d.fl_date, d.crs_dep_time);
             d.delay = d.arr_delay;
-            d.delayRatio = d.crs_elapsed_time / d.arr_delay;
+            d.delayRatio = d.crs_elapsed_time !== 0 ? (d.arr_delay / d.crs_elapsed_time)*100 : 0; // prevent divide by 0
           });
           var dataSet = crossfilter(flights);
           resolve(dataSet);
