@@ -8,9 +8,10 @@ angular.module('angularCrossfilterApp')
 
     return {
       restrict: 'E',
+      scope: {},
       template: '<strong><span id="delay-average"> </span>%</strong></span>',
-      link: function (scope) {
-        var GroupName = 'marker-select';
+      link: function (scope, element, attr) {
+        var GroupName = attr.GroupName;
 
         var buildAverageDelayGroup = function (flight) {
 

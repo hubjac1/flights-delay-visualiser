@@ -14,6 +14,6 @@ angular.module('angularCrossfilterApp')
   .service('UtilService', function () {
 
     return {
-      flightDelay : 'data/FlightDelays.csv',
+      flightDelayPath : 'data/FlightDelays.csv'
     };
   });

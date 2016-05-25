@@ -8,10 +8,11 @@ angular.module('angularCrossfilterApp')
 
     return {
       restrict: 'E',
+      scope: {},
       template: '<div id="delay-chart" class="chart">' +
         '<a class="reset" ng-click="resetDelayChart()">reset</a></div>',
-      link: function (scope) {
-        var GroupName = 'marker-select';
+      link: function (scope, element, attr) {
+        var GroupName = attr.GroupName;
 
         function buildDelayChart(flight, groupName){
 

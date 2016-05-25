@@ -12,8 +12,9 @@ angular.module('angularCrossfilterApp')
       template: '<div id="day-chart" class="chart">' +
         '<a class="reset" ng-click="resetDayChart()">reset</a></div>',
       restrict: 'E',
-      link: function postLink(scope) {
-        var GroupName = 'marker-select';
+      scope: {},
+      link: function (scope, element, attr) {
+        var GroupName = attr.GroupName;
 
         function buildDayChart(flight, groupName){
           var dayOfWeek = flight.dimension(function (d) {

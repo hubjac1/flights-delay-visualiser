@@ -30,7 +30,7 @@ angular.module('angularCrossfilterApp')
         });
       });
     };
-    var preProcess = preProcessing(UtilService.flightDelay);
+    var preProcess = preProcessing(UtilService.flightDelayPath);
 
 
     var getDataSet = function(){
@@ -44,10 +44,10 @@ angular.module('angularCrossfilterApp')
 
     return {
       //Public
-      getFlightDate: getFlightDate,
+      getDataSet: getDataSet,
 
       //Private
-      getDataSet: getDataSet,
+      getFlightDate: getFlightDate,
       preProcessing: preProcessing
     };
   }]);

@@ -10,11 +10,11 @@
 angular.module('angularCrossfilterApp')
   .controller('MainCtrl', [ '$scope', 'UtilService', 'FlightInformationService',function ($scope, UtilService, FlightInformationService) {
 
-    //var GroupName = 'marker-select';
+    $scope.GroupName = 'delay-visualization';
 
     FlightInformationService.getDataSet().then(function(flight) {
 
       //dc.renderAll(GroupName);
     });
-    
+
   }]);

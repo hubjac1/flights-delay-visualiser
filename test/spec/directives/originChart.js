@@ -28,4 +28,10 @@ describe('Directive: originChart', function () {
     element = $compile(element)(scope);
     expect(element.scope().selectOrigin).toBeDefined();
   }));
+
+  it('should attach update list to scope', inject(function ($compile) {
+    element = angular.element('<origin-chart></origin-chart>');
+    element = $compile(element)(scope);
+    expect(element.scope().updateList).toBeDefined();
+  }));
 });

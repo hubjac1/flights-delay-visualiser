@@ -28,4 +28,10 @@ describe('Directive: destinationChart', function () {
     element = $compile(element)(scope);
     expect(element.scope().selectDestination).toBeDefined();
   }));
+
+  it('should attach update list to scope', inject(function ($compile) {
+    element = angular.element('<destination-chart></destination-chart>');
+    element = $compile(element)(scope);
+    expect(element.scope().updateList).toBeDefined();
+  }));
 });

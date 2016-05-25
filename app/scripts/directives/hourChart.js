@@ -8,10 +8,11 @@ angular.module('angularCrossfilterApp')
 
     return {
       restrict: 'E',
+      scope: {},
       template: '<div id="hour-chart" class="chart">' +
         '<a class="reset" ng-click="resetHourChart()">reset</a></div>',
-      link: function (scope) {
-        var GroupName = 'marker-select';
+      link: function (scope, element, attr) {
+        var GroupName = attr.GroupName;
 
         function buildHourChart(flight, groupName){
 

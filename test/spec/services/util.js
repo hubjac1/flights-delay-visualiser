@@ -13,6 +13,6 @@ describe('Util service', function () {
   }));
 
   it('should serve flightDelay path', function () {
-    expect(UtilService.flightDelay).toBe('data/FlightDelays.csv');
+    expect(UtilService.flightDelayPath).toBe('data/FlightDelays.csv');
   });
 });

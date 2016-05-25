@@ -41,7 +41,7 @@ module.exports = function(config) {
     ],
 
     proxies: {
-      '/data/FlightDelays.csv': 'test/asset/smallFlightDelay.csv'
+      '/data/FlightDelays.csv': '/base/test/asset/smallFlightDelay.csv'
     },
 
     // list of files / patterns to exclude
